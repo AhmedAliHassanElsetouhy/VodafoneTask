@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -36,7 +37,7 @@ public class BasePage {
 			e.printStackTrace();
 		}
 	}
-
+ 
 	public static void lunchBrowser() {
 
 		if (props.getProperty("browser").equalsIgnoreCase("chrome")) {
@@ -45,24 +46,24 @@ public class BasePage {
 		} else if (props.getProperty("browser").equalsIgnoreCase("firefox")) {
 			WebDriverManager.firefoxdriver().setup();
 			driver = new FirefoxDriver();
-		}
-		else {
+		} else {
 			throw new Error("Browser Not Supported");
 		}
 		driver.manage().timeouts().pageLoadTimeout(2000, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(2000, TimeUnit.SECONDS);
-		driver.manage().window().maximize();
+//		driver.manage().window().maximize();
+		driver.manage().window().setSize(new Dimension(1024, 768));
 		driver.get(props.getProperty("url"));
 
 	}
-	
+
 	public Select select;
-	
+
 	public void selectItemWithIndex(WebElement menuItem, int index) {
 		select = new Select(menuItem);
 		select.selectByIndex(index);
 	}
-	
+
 	protected static void moveToElement(WebElement elementToMoveTo) {
 		Actions generateReportHoverAction = new Actions(driver);
 		generateReportHoverAction.moveToElement(elementToMoveTo).perform();
@@ -72,5 +73,13 @@ public class BasePage {
 		Actions hoverAction = new Actions(driver);
 		hoverAction.moveToElement(elementToHoverOn).perform();
 	}
-	
+
+	protected static void clickButton(WebElement button) {
+		button.click();
+	}
+
+	protected static void setTextElementText(WebElement textElement, String value) {
+		textElement.sendKeys(value);
+	}
+
 }

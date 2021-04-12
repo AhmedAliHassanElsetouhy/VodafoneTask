@@ -1,8 +1,7 @@
-@reg
+@Sanity
 Feature: Registration 
   I want to register to have an account on the system
 
-  @reg
   Scenario Outline: User register on the website
     Given I want to create an account
     When I enter valid "<email>" and click on create an account button
@@ -11,5 +10,5 @@ Feature: Registration
 
     Examples: 
      |fName|lName| passwd| email                                | address|  city |postCode|state|
-     |Ahmed|Ali  | 123456 |ahmed.ali.hassan.elsetouhy@gmail.com  | Giza   |  Giza |12345   |2|
+     |Ahmed|Ali  | 123456|ahmed.ali.hassan.elsetouhy@gmail.com  | Giza   |  Giza |12345   |2|
  

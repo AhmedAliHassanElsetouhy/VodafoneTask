@@ -25,9 +25,9 @@ public class AuthenticationPage extends BasePage{
 		SubmitSignInEmailBtn.click();
 	}
 	
-//	public void signInAccountFun(String registeredEmail, String registeredPassword) {
-//		loginEmailTxtField.sendKeys(registeredEmail);
-//		loginEmailTxtField.sendKeys(registeredPassword);
-//		signInBtn.click();
-//	}
+	public void signInAccountFun(String registeredEmail, String registeredPassword) {
+		loginEmailTxtField.sendKeys(registeredEmail);
+		loginEmailTxtField.sendKeys(registeredPassword);
+		signInBtn.click();
+	}
 }

@@ -22,28 +22,8 @@ public class CheckoutSteps extends BasePage {
 	CategoryPage categoryPage;
 	ProductPage productPage;
 	OrderPage orderPage;
-
-	@Given("I want to create an account")
-	public void i_want_to_create_an_account() {
-		// Write code here that turns the phrase above into concrete actions
-		lunchBrowser();
-		homePage = new HomePage();
-		homePage.openAuthenticationPageFun();
-	}
-
-	@When("I enter valid {string} and click on create an account button")
-	public void i_enter_valid(String email) {
-		// Write code here that turns the phrase above into concrete actions
-		authenticationPage = new AuthenticationPage();
-		authenticationPage.createEmailAccountFun(email);
-	}
-
-	@When("Enter {string} {string} {string} {string} {string} {string} {int}")
-	public void enter(String fName, String lName, String password, String address, String city, String postCode, int stateIndex) {
-		registrationPage = new RegistrationPage();
-		registrationPage.registerFun(fName, lName, password, address, city, postCode, stateIndex);
-	}
-
+ 
+	
 	@Given("Select “Blouses” Subcategory in “Women” Category")
 	public void select_blouses_subcategory_in_women_category() {
 		homePage = new HomePage();
@@ -55,7 +35,7 @@ public class CheckoutSteps extends BasePage {
 		categoryPage = new CategoryPage();
 		categoryPage.openProductFun();
 	}
-
+ 
 	@Given("Select “White” colour and {int} size")
 	public void select_white_colour_and_m_size(int sizeIndex) {
 		productPage = new ProductPage();

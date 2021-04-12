@@ -5,8 +5,10 @@ import org.openqa.selenium.support.FindBy;
 
 public class HomePage extends BasePage{
 
+	@FindBy(className = "logout")
+	public WebElement logoutLnk;
 	
-	@FindBy(linkText ="Sign in")
+	@FindBy(partialLinkText ="Sign in")
 	WebElement signInLnk;
 	
 	@FindBy(xpath = "//a[@title=\"Women\"]")
@@ -16,7 +18,7 @@ public class HomePage extends BasePage{
 	WebElement blusesWomenCategoryLnk;
 		
 	public void openAuthenticationPageFun() {
-		signInLnk.click();
+		clickButton(signInLnk);
 	}
 	
 	public void openWomenCategoryFun() {

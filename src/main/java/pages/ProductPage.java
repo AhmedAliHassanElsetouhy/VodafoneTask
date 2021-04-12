@@ -14,7 +14,6 @@ public class ProductPage extends BasePage {
 	@FindBy(name = "Submit")
 	WebElement addToCartBtn;
 
-//	@FindBy(className = "btn btn-default button button-medium")
 	@FindBy(xpath = "//a[@title='Proceed to checkout']")
 	WebElement proceedToCheckoutBtn;
 

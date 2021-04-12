@@ -1,5 +1,7 @@
 package steps;
 
+import org.junit.Assert;
+
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -30,14 +32,16 @@ public class RegistrationSteps extends BasePage {
 	}
 
 	@When("Enter {string} {string} {string} {string} {string} {string} {int}")
-	public void enter(String fName, String lName, String password, String address, String city, String postCode, int stateIndex) {
+	public void enter(String fName, String lName, String password, String address, String city, String postCode,
+			int stateIndex) {
 		registrationPage = new RegistrationPage();
 		registrationPage.registerFun(fName, lName, password, address, city, postCode, stateIndex);
 	}
 
 	@Then("Account created successfuly, Home page should open")
 	public void account_created_successfuly_home_page_should_open() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+		// Write code here that turns the phrase above into concrete actions
+		homePage = new HomePage();
+		Assert.assertTrue(homePage.logoutLnk.isDisplayed());
 	}
 }

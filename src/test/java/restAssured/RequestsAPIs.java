@@ -12,7 +12,7 @@ import io.restassured.response.Response;
 import org.junit.Test;
 import org.junit.Assert;
 
-public class GetUsers {
+public class RequestsAPIs {
 
 	int successStatusCode = 200;
 	String title = "foo";
@@ -41,7 +41,7 @@ public class GetUsers {
 		Assert.assertEquals(response.getStatusCode(), successStatusCode);
 		Assert.assertEquals(actualSize, 100);
 	}
-
+ 
 	@Test()
 	public void getUserDetails_35() {
 		Response response = get(this.baseURI + this.basePath + "/35");
