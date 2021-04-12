@@ -1,8 +1,7 @@
 
-@Sanity1
 Feature: Cart Checkout 
   I want to add products to my cart
-
+@Sanity1
   Scenario Outline: Cart Checkout 
     Given Select “Blouses” Subcategory in “Women” Category
     And Select resulted product

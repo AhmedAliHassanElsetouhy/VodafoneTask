@@ -16,5 +16,4 @@ plugin = { "pretty",
 )
 // , dryRun = true
 public class TestRunner {
-
 }
